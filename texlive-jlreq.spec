@@ -1,6 +1,6 @@
 Name:		texlive-jlreq
 Version:	65119
-Release:	1
+Release:	2
 Summary:	Japanese document class based on requirements for Japanese text layout
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/jlreq
