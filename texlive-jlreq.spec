@@ -1,5 +1,5 @@
 Name:		texlive-jlreq
-Version:	69932
+Version:	72091
 Release:	1
 Summary:	Japanese document class based on requirements for Japanese text layout
 Group:		Publishing
