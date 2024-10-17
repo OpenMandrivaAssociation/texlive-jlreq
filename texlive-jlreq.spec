@@ -3,7 +3,7 @@ Version:	72091
 Release:	1
 Summary:	Japanese document class based on requirements for Japanese text layout
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/jlreq
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/jlreq
 License:	bsd2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.doc.r%{version}.tar.xz
