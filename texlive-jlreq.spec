@@ -1,44 +1,22 @@
-Name:		texlive-jlreq
-Version:	72460
+%global tl_name jlreq
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
 Summary:	Japanese document class based on requirements for Japanese text layout
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/jlreq
+URL:		https://www.ctan.org/tex-archive/macros/jptex/latex/jlreq
 License:	bsd2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jlreq.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a Japanese document class based on
-requirements for Japanese text layout. The class file and the
-JFM (Japanese font metric) files for LuaTeX-ja / pLaTeX /
-upLaTeX are provided.
+This package provides a Japanese document class based on requirements
+for Japanese text layout. The class file and the JFM (Japanese font
+metric) files for LuaTeX-ja / pLaTeX / upLaTeX are provided.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/jlreq
-%{_texmfdistdir}/tex/luatex/jlreq
-%{_texmfdistdir}/tex/latex/jlreq
-%{_texmfdistdir}/fonts/vf/public/jlreq
-%{_texmfdistdir}/fonts/tfm/public/jlreq
-%doc %{_texmfdistdir}/doc/latex/jlreq
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
