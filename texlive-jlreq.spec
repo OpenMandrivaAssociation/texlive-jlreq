@@ -1,5 +1,5 @@
 %global tl_name jlreq
-%global tl_revision 77682
+%global tl_revision 79733
 
 Name:		texlive-%{tl_name}
 Version:	%{tl_revision}
